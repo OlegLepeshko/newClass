@@ -40,16 +40,32 @@ const lada = new myCar ("lada", "vesta")
 
 lexus.autoPark()
 lexus.drive()
-setTimeout(() => lexus.drive(), 1000)
-setTimeout(() => lexus.autoPark(), 1000)
-async function fun()  {
+async  function autoPark () {
     try {
         let response = await setTimeout(() =>
-            (lada.getGas()), 0)
+            lexus.autoPark(), 1000)
+    } catch (err) {
+        console.log(err)
+    }
+}
+async  function drive () {
+  try {
+      let response = await setTimeout(() =>
+          lexus.drive(), 2000)
+  } catch (err) {
+      console.log(err)
+  }
+}
+async function getGas()  {
+    try {
+        let response = await setTimeout(() =>
+            (lada.getGas()), 3000)
     } catch (err) {
         console.log(err)
     }
 
 
 }
-fun()
+getGas()
+drive()
+autoPark()
