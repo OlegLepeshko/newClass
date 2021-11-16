@@ -4,7 +4,7 @@ class myCar {
         this.brand = brand
         this.model = model
         this.gasTank = 100
-        this.zapravka = [];
+        this.zapravka = []
 
 
     }
