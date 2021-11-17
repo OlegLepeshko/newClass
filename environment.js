@@ -40,19 +40,27 @@ class NewMycount extends Mycount {
  let mySum = new Mycount (10, 20)
  let mySuperSum = new NewMycount (20, 20)
 
-  
- console.log(mySum.divide())
+
  console.log(mySuperSum.divide())
  console.log(mySuperSum.plus())
  console.log(mySuperSum.minus())
  console.log(mySuperSum.multiply())
  getCount()
+ giveCount()
  async function getCount() {
   try {
-      let response = await setTimeout(() => console.log(mySum.multiply()), 3000)
+      let response = await setTimeout(() => console.log(mySum.multiply()), 2000)
       return response
   } catch (err) {
     console.log (err)
   }
   
+}
+async function giveCount() {
+  try {
+    let response = await setTimeout(() => console.log(mySum.divide()), 1000)
+    return response
+  }catch (err) {
+    return err
+  }
 }
